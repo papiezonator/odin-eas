@@ -1,6 +1,6 @@
 #container {
     display: flex;
     border: 5px black solid;
-    width: max-content;    
+    width: 960px;    
 }
 
