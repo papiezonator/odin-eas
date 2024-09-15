@@ -21,11 +21,12 @@ document.addEventListener("DOMContentLoaded", () =>{
             gridElement.classList.add("grid");
 
             //document.getElementsByClassName("grid")[x].style.border = "2px black solid";
-
+            gridElement.addEventListener("mouseenter", (event) =>
+            {event.target.style.color = "orange"})
         }
         
     }
 
-    
-
+   
 })
+
