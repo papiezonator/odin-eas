@@ -19,10 +19,13 @@ function createGrid(columns, gridElements){
             
             gridElement.classList.add("grid");
             
+            let height = 960/gridElements;
+            let width = 960/columns;
+
             
             
-            gridElement.style.height = "60px";
-            gridElement.style.width = "60px";
+            gridElement.style.height = `${height}px`;
+            gridElement.style.width = `${width}px`;
 
             //document.getElementsByClassName("grid")[x].style.border = "2px black solid";
             gridElement.addEventListener("mouseenter", (event) =>
@@ -40,14 +43,19 @@ document.addEventListener("DOMContentLoaded", () =>{
 const dimensionButton = document.querySelector("#canvas");
 
 dimensionButton.addEventListener("click", ()=>{
-    containerClearance();
+    
     
     let size = prompt("Enter a number: ");
+    if (size > 100){
+        alert("Please enter a number lower than or equal to 100");
+        
+    } else {
+        containerClearance();
+        createGrid(size, size);
 
-    createGrid(size, size);
-
-    let size2 = 960/size;
-    console.log(`Dimensions are ${size2}px by ${size2}px`)
+        let size2 = 960/size;
+        console.log(`Dimensions are ${size2}px by ${size2}px`)
+    }
 })
 
 function containerClearance(){
